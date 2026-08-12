@@ -1,0 +1,956 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #080a0f;
+    color: #f5f7fa;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   FUNDO DECORATIVO
+========================= */
+
+.background-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.glow-1 {
+    background: #287cff;
+    top: -200px;
+    left: -200px;
+}
+
+.glow-2 {
+    background: #8b5cf6;
+    right: -200px;
+    top: 600px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    height: 76px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    background: rgba(8, 10, 15, 0.75);
+
+    backdrop-filter: blur(20px);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.nav-content {
+    max-width: 1180px;
+    height: 100%;
+
+    margin: auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+}
+
+.logo > span {
+    color: #4c8dff;
+    font-weight: 700;
+}
+
+.logo strong span {
+    color: #4c8dff;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: #9da3ae;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.25s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 1180px;
+    min-height: 650px;
+
+    margin: auto;
+    padding: 100px 25px;
+
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 8px 13px;
+
+    border: 1px solid rgba(76, 141, 255, 0.2);
+
+    background: rgba(76, 141, 255, 0.06);
+
+    border-radius: 30px;
+
+    color: #8ea4c9;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #4cdb8c;
+
+    box-shadow: 0 0 12px #4cdb8c;
+}
+
+.hero h1 {
+    margin-top: 25px;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: clamp(45px, 5vw, 70px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #4c8dff,
+        #9b7cff
+    );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.hero p {
+    max-width: 570px;
+
+    margin-top: 25px;
+
+    color: #9299a5;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+
+    margin-top: 35px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 21px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.25s;
+}
+
+.btn-primary {
+    background: #4c8dff;
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(76, 141, 255, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    background: #619bff;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: #c7ccd4;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================
+   JANELA DE CÓDIGO
+========================= */
+
+.code-window {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    background: #0d1017;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(76, 141, 255, 0.06);
+}
+
+.window-top {
+    height: 45px;
+
+    padding: 0 17px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #636b79;
+
+    font-size: 11px;
+}
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.window-dots span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #363c47;
+}
+
+.code-content {
+    padding: 30px;
+
+    font-family: 'Courier New', monospace;
+
+    color: #8c94a3;
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+.indent {
+    padding-left: 25px;
+}
+
+.double-indent {
+    padding-left: 50px;
+}
+
+.purple {
+    color: #b48cff;
+}
+
+.blue {
+    color: #5da2ff;
+}
+
+.green {
+    color: #6fd6a1;
+}
+
+
+/* =========================
+   SEÇÃO DE PROJETOS
+========================= */
+
+.projects-section {
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 90px 25px;
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: end;
+    justify-content: space-between;
+
+    margin-bottom: 45px;
+}
+
+.section-tag {
+    color: #4c8dff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2,
+.about-content h2 {
+    margin-top: 10px;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 38px;
+
+    letter-spacing: -1.5px;
+}
+
+.section-heading h2 span,
+.about-content h2 span {
+    color: #4c8dff;
+}
+
+.section-heading p {
+    margin-top: 10px;
+
+    color: #747b87;
+
+    font-size: 14px;
+}
+
+.project-count {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+}
+
+.project-count strong {
+    font-family: 'Space Grotesk';
+
+    font-size: 32px;
+}
+
+.project-count span {
+    color: #656c77;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   GRID DOS PROJETOS
+========================= */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.project-card {
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    background: #0d1017;
+
+    transition:
+        transform 0.3s,
+        border 0.3s,
+        box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(76, 141, 255, 0.3);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   IMAGEM / ÍCONE DO PROJETO
+========================= */
+
+.project-image {
+    height: 170px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.project-image i {
+    font-size: 48px;
+
+    opacity: 0.9;
+
+    transition: 0.3s;
+}
+
+.project-card:hover .project-image i {
+    transform:
+        scale(1.12)
+        rotate(-4deg);
+}
+
+.project-number {
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================
+   CORES DOS PROJETOS
+========================= */
+
+.image-blue {
+    background:
+        linear-gradient(
+            135deg,
+            #0c2448,
+            #102e62
+        );
+}
+
+.image-purple {
+    background:
+        linear-gradient(
+            135deg,
+            #291542,
+            #3d1d65
+        );
+}
+
+.image-green {
+    background:
+        linear-gradient(
+            135deg,
+            #0b3029,
+            #124f42
+        );
+}
+
+.image-orange {
+    background:
+        linear-gradient(
+            135deg,
+            #40220d,
+            #673713
+        );
+}
+
+.image-red {
+    background:
+        linear-gradient(
+            135deg,
+            #3c1017,
+            #641c28
+        );
+}
+
+.image-cyan {
+    background:
+        linear-gradient(
+            135deg,
+            #0b3038,
+            #10515d
+        );
+}
+
+
+/* =========================
+   INFORMAÇÕES DO PROJETO
+========================= */
+
+.project-info {
+    padding: 22px;
+}
+
+.project-type {
+    color: #5d91e6;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.3px;
+}
+
+.project-info h3 {
+    margin-top: 9px;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.2;
+}
+
+.project-info p {
+    margin-top: 10px;
+
+    min-height: 68px;
+
+    color: #777f8d;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   TECNOLOGIAS
+========================= */
+
+.technologies {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 15px;
+}
+
+.technologies span {
+    padding: 5px 7px;
+
+    border-radius: 5px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #858d99;
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   BOTÃO DO PROJETO
+========================= */
+
+.project-link {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 18px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    color: #b5c5e2;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.project-link:hover {
+    color: #5c99ff;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.about-section {
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 70px 25px 120px;
+}
+
+.about-box {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 35px;
+
+    padding: 55px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(76, 141, 255, 0.06),
+            rgba(139, 92, 246, 0.03)
+        );
+}
+
+.about-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: rgba(76, 141, 255, 0.1);
+
+    color: #5c97ff;
+
+    font-size: 25px;
+}
+
+.about-content h2 {
+    font-size: 32px;
+}
+
+.about-content p {
+    max-width: 760px;
+
+    margin-top: 17px;
+
+    color: #838b98;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.skills div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 7px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color: #aeb5c0;
+
+    font-size: 11px;
+}
+
+.skills i {
+    color: #5c97ff;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    background: #06080c;
+}
+
+.footer-content {
+    max-width: 1180px;
+
+    min-height: 90px;
+
+    margin: auto;
+
+    padding: 0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.footer-content p,
+.footer-copy {
+    color: #555d69;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablets / notebooks menores */
+@media (max-width: 1100px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* Tablets */
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
+    }
+
+    .hero-code {
+        max-width: 600px;
+    }
+
+}
+
+
+/* Celulares */
+@media (max-width: 650px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 55px;
+
+        padding-bottom: 60px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .project-count {
+        display: none;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 190px;
+    }
+
+    .project-info {
+        padding: 25px;
+    }
+
+    .project-info h3 {
+        font-size: 20px;
+    }
+
+    .project-info p {
+        font-size: 13px;
+    }
+
+    .about-box {
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+    }
+
+    .about-content h2 {
+        font-size: 27px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        padding: 25px;
+    }
+
+}
+
+
+/* Celulares pequenos */
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .projects-section,
+    .about-section {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .project-image {
+        height: 170px;
+    }
+
+}
